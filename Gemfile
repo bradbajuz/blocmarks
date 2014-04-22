@@ -22,8 +22,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rails_admin'
 gem 'faker'
 gem 'devise'
 gem 'pundit'
 gem 'figaro'
+gem 'psych'
 gem 'newrelic_rpm'
