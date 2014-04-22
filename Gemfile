@@ -1,14 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.0'
 
-group :production do
-  gem 'pg'
-end
 
-group :development do
-  gem 'sqlite3'
-end
+gem 'pg'
 
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.1.1'
