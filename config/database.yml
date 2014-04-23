@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: db/development_pg
+  database: blocmarks_development
   pool: 5
   username: Brad
   password: 
@@ -12,7 +12,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: db/test_pg
+  database: blocmarks_test
   pool: 5
   username: Brad
   password: 
