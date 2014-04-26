@@ -1,6 +1,6 @@
 Blocmarks::Application.routes.draw do
   
-  get 'bookmarks/index'
+  resources :bookmarks, only: [:index]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
