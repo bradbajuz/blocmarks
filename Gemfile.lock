@@ -52,12 +52,15 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
-    font-awesome-rails (4.0.3.1)
+    font-awesome-rails (4.0.3.2)
       railties (>= 3.2, < 5.0)
     haml (4.0.5)
       tilt
     hike (1.2.3)
     i18n (0.6.9)
+    incoming (0.1.7)
+      mail (~> 2.4)
+      rack
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -170,6 +173,7 @@ DEPENDENCIES
   devise
   faker
   figaro
+  incoming
   jbuilder (~> 1.2)
   jquery-rails
   newrelic_rpm

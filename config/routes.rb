@@ -1,6 +1,4 @@
 Blocmarks::Application.routes.draw do
-
-  post :incoming, to: 'incoming#create'
   
   resources :bookmarks, only: [:index]
 
