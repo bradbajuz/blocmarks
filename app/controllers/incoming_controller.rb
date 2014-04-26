@@ -11,9 +11,9 @@ class IncomingController < ApplicationController
     sender = params['sender']
     subject = params['subject']
     body_plain = params["body-plain"]
-    # user = User.find_by_email(sender)
-    # id = user.id
-    # email = user.email
+    user = User.find_by_email(sender)
+    id = user.id
+    email = user.email
 
     # Assuming all went well. 
     head 200
