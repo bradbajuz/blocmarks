@@ -6,7 +6,7 @@ class IncomingController < ApplicationController
   def create
     # Take a look at these in your server logs
     # to get a sense of what you're dealing with.
-    puts "INCOMING PARAMS HERE: #{params}"
+    logger.info "INCOMING PARAMS HERE: #{params}"
 
     sender = params['sender']
     subject = params['subject']
