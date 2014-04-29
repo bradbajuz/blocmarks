@@ -6,6 +6,7 @@ class IncomingController < ApplicationController
   def create
     # Take a look at these in your server logs
     # to get a sense of what you're dealing with.
+
     puts "INCOMING PARAMS HERE: #{params}"
 
     sender = params['sender']
@@ -14,6 +15,8 @@ class IncomingController < ApplicationController
     user = User.find_by_email(sender)
     id = user.id
     email = user.email
+
+    render :text => "OK"
 
     # Assuming all went well. 
     head 200
