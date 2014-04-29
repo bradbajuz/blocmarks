@@ -2,7 +2,7 @@ Blocmarks::Application.routes.draw do
 
   get 'hotlists/show'
 
-  post :incoming, to: 'incoming#post'
+  post :incoming, to: 'incoming#create'
   
   resources :bookmarks, only: [:index]
 
