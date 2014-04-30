@@ -1,2 +1,19 @@
 <h1>Blocmarks</h1>
 <h3>All Blocmarks</h3>
+
+<div class="row">
+  <div class="col-md-8">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to bookmark.title %>
+          </h4>
+          <small>
+            <%= link_to bookmark.url %>
+          </small>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
