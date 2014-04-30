@@ -1,10 +1,10 @@
 Blocmarks::Application.routes.draw do
 
-  get 'hotlists/show'
 
   post :incoming, to: 'incoming#create'
   
   resources :bookmarks, only: [:index]
+  resources :hotlists, only: [:show]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
