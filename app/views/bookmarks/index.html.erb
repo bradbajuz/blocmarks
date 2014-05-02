@@ -1,7 +1,25 @@
 <h1>Blocmarks</h1>
-<h3 class="text-center">All Blocmarks</h3>
+<h3 class="text-center">My Blocmarks</h3>
 
 <div class="container">
+  <% @bookmark_groups.each do |title, bookmarks| %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= link_to title, bookmarks_path(title: title) %>
+      </div>
+    </div>
+
+    <% if nil %>
+    <div class="row">
+      <% bookmark.each_link.each do |link| %>
+        <div class="col-md-4">
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  <% end  %>
+
+  <% if nil %>
   <div class="row">
     <div class="col-md-4">
       <% @bookmarks.each do |bookmark| %>
@@ -18,4 +36,5 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 </div>
