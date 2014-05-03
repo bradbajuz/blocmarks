@@ -1,5 +1,5 @@
 <h1>Blocmarks</h1>
-<h3 class="text-center">My Blocmarks</h3>
+<h3 class="text-center"><%= current_user.name.pluralize %> Blocmarks</h3>
 
 <div class="container">
   <% @bookmark_groups.each do |title, bookmarks| %>
@@ -9,32 +9,12 @@
       </div>
     </div>
 
-    <% if nil %>
     <div class="row">
-      <% bookmark.each_link.each do |link| %>
+      <% bookmarks.each do |link| %>
         <div class="col-md-4">
+          <%= link_to link.url, "http://#{link.url}", target: "_blank" %>
         </div>
       <% end %>
     </div>
-    <% end %>
-  <% end  %>
-
-  <% if nil %>
-  <div class="row">
-    <div class="col-md-4">
-      <% @bookmarks.each do |bookmark| %>
-        <div class="media">
-          <div class="media-body">
-            <h4 class="media-heading">
-              <%= link_to bookmark.title, bookmark %>
-            </h4>
-            <small>
-              <%= link_to bookmark.url, "http://#{bookmark.url}", target: "_blank" %>
-            </small>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
   <% end %>
 </div>
