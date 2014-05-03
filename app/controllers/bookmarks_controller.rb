@@ -7,8 +7,6 @@ class BookmarksController < ApplicationController
     else
       @bookmark_groups = current_user.bookmarks.group_by { |b| b.title }
     end
-
   end
-
 
 end

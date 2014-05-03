@@ -1,20 +1,23 @@
 <h1>Blocmarks</h1>
-<h3 class="text-center"><%= current_user.name.pluralize %> Blocmarks</h3>
+
 
 <div class="container">
+  <h3 class="text-center"><%= current_user.name.pluralize %> Blocmarks</h3>
+
   <% @bookmark_groups.each do |title, bookmarks| %>
     <div class="row">
       <div class="col-md-12">
-        <%= link_to title, bookmarks_path(title: title) %>
+        <h3><%= link_to title, bookmarks_path(title: title) %></h3>
       </div>
-    </div>
 
-    <div class="row">
       <% bookmarks.each do |link| %>
-        <div class="col-md-4">
-          <%= link_to link.url, "http://#{link.url}", target: "_blank" %>
+        <div class="col-md-4" >
+          <div class="container-topic-url-inner">
+            <p class="text-center"><%= link_to link.url, "http://#{link.url}", target: "_blank" %></p>
+        </div>
         </div>
       <% end %>
     </div>
   <% end %>
 </div>
+
