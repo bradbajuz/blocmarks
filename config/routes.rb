@@ -2,7 +2,7 @@ Blocmarks::Application.routes.draw do
 
   post :incoming, to: 'incoming#create'
   
-  resources :bookmarks, only: [:index]
+  resources :bookmarks, only: [:index, :destroy]
   resources :hotlists, only: [:index]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
