@@ -1,11 +1,12 @@
 class HotlistsController < ApplicationController
   def index
     
-    if params[:title]
-      @hotlist_groups = current_user.bookmarks.where(title: params[:title]).group_by { |h| h.title }
-    else
-      @hotlist_groups = current_user.bookmarks.group_by { |h| h.title }
-    end
-  end
+    @hotlist_groups = Bookmark.all
 
+    if params[:title]
+      @hotlist_groups = @hotlist_groups.where(title: params[:title])
+    end
+
+    @hotlist_groups = @hotlist_groups.group_by { |h| h.title }
+  end
 end
