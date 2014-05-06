@@ -5,5 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :bookmarks, dependent: :destroy
+  has_many :likes, dependent: :destroy
+
+  def liked(bookmark)
+    self.likes.where(bookmark_id: bookmark.id).first
+  end
 
 end
