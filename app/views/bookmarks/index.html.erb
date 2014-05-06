@@ -14,7 +14,9 @@
           <div class="container-topic-url-inner">
             <p class="text-center"><%= link_to link.url, "http://#{link.url}", target: "_blank" %></p>
             <p class="text-center"><%= link_to "Delete", link, method: :delete %></p>
-            <%= render partial: 'likes/like', locals: { bookmark: link} %>
+            <% if like = current_user.liked(link) %>
+              <%= render partial: 'likes/like', locals: { bookmark: link } %>
+            <% end %>
           </div>
         </div>
       <% end %>

@@ -6,10 +6,10 @@ class LikesController < ApplicationController
 
     if like.save
       flash[:notice] = "Liked blocmark"
-      redirect_to bookmarks_path
+      redirect_to hotlists_path
     else
       flash[:error] = "Unable to like. Please try again."
-      render "bookmarks/index"
+      render "hotlists/index"
     end
   end
 
@@ -19,10 +19,10 @@ class LikesController < ApplicationController
 
     if @like.destroy
       flash[:notice] = "Removed like."
-      redirect_to bookmarks_path
+      redirect_to hotlists_path
     else
       flash[:error] = "Unalbe to remove like, Please try agian."
-      render "bookmarks/index"
+      render "hotlists/index"
     end
   end
 end
