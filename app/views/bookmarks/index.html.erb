@@ -13,7 +13,9 @@
         <div class="col-md-4" >
           <div class="container-topic-url-inner">
             <p class="text-center"><%= link_to link.url, "http://#{link.url}", target: "_blank" %></p>
-            <p class="text-center"><%= link_to "Delete", link, method: :delete %></p>
+            <% if policy(Bookmark.new).destroy? %>
+              <p class="text-center"><%= link_to "Delete", link, method: :delete %></p>
+            <% end %>
           </div>
         </div>
       <% end %>
