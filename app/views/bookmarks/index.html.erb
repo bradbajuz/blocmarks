@@ -14,9 +14,27 @@
           <div class="container-topic-url-inner">
             <p class="text-center"><%= link_to link.url, "http://#{link.url}", target: "_blank" %></p>
             <p class="text-center"><%= link_to "Delete", link, method: :delete %></p>
-            <% if like = current_user.liked(link) %>
-              <%= render partial: 'likes/like', locals: { bookmark: link } %>
-            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <h3 class="text-center">Liked Blocmarks</h3> 
+  </div>
+
+  <% @liked_bookmark_groups.each do |title, bookmarks| %>
+    <div class="row">
+      <div class="col-md-12">
+        <h3><%= link_to title, bookmarks_path(title: title) %></h3>
+      </div>
+
+      <% bookmarks.each do |link| %>
+        <div class="col-md-4" >
+          <div class="container-topic-url-inner">
+            <p class="text-center"><%= link_to link.url, "http://#{link.url}", target: "_blank" %></p>
+            <%= render partial: 'likes/like', locals: { bookmark: link } %>
           </div>
         </div>
       <% end %>

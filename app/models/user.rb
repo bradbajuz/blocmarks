@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :bookmarks, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :liked_bookmarks, through: :likes, source: :bookmark
 
   def liked(bookmark)
     self.likes.where(bookmark_id: bookmark.id).first

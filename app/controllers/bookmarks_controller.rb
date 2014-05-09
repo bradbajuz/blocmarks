@@ -8,6 +8,12 @@ class BookmarksController < ApplicationController
     else
       @bookmark_groups = current_user.bookmarks.group_by { |b| b.title }
     end
+
+    if params[:title]
+      @liked_bookmark_groups = current_user.liked_bookmarks.where(title: params[:title]).group_by { |b| b.title }
+    else
+      @liked_bookmark_groups = current_user.liked_bookmarks.group_by { |b| b.title }
+    end
   end
 
   def destroy

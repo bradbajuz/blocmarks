@@ -13,7 +13,9 @@
         <div class="col-md-4" >
           <div class="container-topic-url-inner">
             <p class="text-center"><%= link_to link.url, "http://#{link.url}", target: "_blank" %></p>
-            <%= render partial: 'likes/like', locals: { bookmark: link} %>
+            <% if link.user != current_user %>
+              <%= render partial: 'likes/like', locals: { bookmark: link } %>
+            <% end %>
           </div>
         </div>
       <% end %>
