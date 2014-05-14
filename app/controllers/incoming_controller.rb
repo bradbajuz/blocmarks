@@ -22,14 +22,11 @@ class IncomingController < ApplicationController
 
       if titles.include?(subject)
         user_bookmarks = user_bookmarks.find_by_title(subject)
-        user_bookmarks.hotlists.create!(url: body_plain, user_id: id)
       else
         new_user_submission = user.bookmarks.create!({ title: subject, url: body_plain })
-        new_user_submission.hotlists.create!(url: body_plain, user_id: id)
       end
     else
       new_submission = user.bookmarks.create!({ title: subject, url: body_plain })
-      new_submission.hotlists.create!(url: body_plain, user_id: id)
     end
  
 
